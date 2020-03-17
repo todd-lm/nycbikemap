@@ -1,44 +1,65 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
   <link href="https://fonts.googleapis.com/css?family=Courier+Prime|Roboto+Mono&display=swap" rel="stylesheet">
 	
   <link rel="stylesheet" href="styles.css">
 
   <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text|Sarpanch|Zilla+Slab+Highlight" rel="stylesheet">
+
+  <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+  <style>
+    body { margin: 0; padding: 0; }
+    #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+  </style>
+
 </head>
-<title>Todd-LM</title>
+<title>NYC Bike Map</title>
 
-<body style="background-color: black">
-  <center>
-<span>
+<body style="background-color: white">
+  <script src="directions.js"></script>
   
-    <span class="superior">Superior</span>
-  
-</span>
+  <link
+rel="stylesheet"
+href="directions.css"
+type="text/css"
+/>
 
-<a href="https://github.com/todd-lm">
+<center>
+  <div id='map'></div>
+  <script>
 
-<h3 class="first-info">By todd-lm</h3>
-</a>
-<a class="links" href="https://todd-lm.github.io/merch">About (Coming soon)</a>
-<a class="links" href="https://todd-lm.github.io/merch">Merch</a>
-<a class="links" href="https://www.youtube.com/channel/UCDIbUrHx5gvL4GEen17hSQA">Memes</a>
-<a class="links" href="https://unsplash.com/@todd_lm">Photography</a>
-<a class="links" href="https://github.com/todd-lm">Code</a>
-<a class="links" href="https://github.com/todd-lm/projects.html">Projects</a>
-<a class="links" href="mailto:contactsuperior.labs@gmail.com">Contact</a>
+if (!mapboxgl.supported()) {
+alert('Your browser does not support Mapbox GL');
+} else {
 
-
-<div class="socialLinks">
-  <div class="linkPush">
-<a  class="bottomLinks" href="https://github.com/todd-lm">Github</a>
-<a  class="bottomLinks" href="https://unsplash.com/@todd_lm">Unsplash</a>
-<a  class="bottomLinks" href="https://www.instagram.com/superior_labs/">Instagram</a>
-<a  class="bottomLinks" href="mailto:contactsuperior.labs@gmail.com">Email</a>
-</div>
-
-</div>
+  mapboxgl.accessToken = 'pk.eyJ1IjoidG9kZGxtIiwiYSI6ImNrN3RuYzRjaDB2Zm4zZm5yOW42Ymt0cDQifQ.x1fVFY167sQIIxb3a2zMpQ';
+  var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/toddlm/ck7tne8954uck1iplsky5igqx/draft'
+  });
+}
+// Add geolocate control to the map.
+map.addControl(
+new mapboxgl.GeolocateControl({
+positionOptions: {
+enableHighAccuracy: true
+},
+trackUserLocation: true
+})
+);
+ //Add navigation 
+ 
+map.addControl(
+new MapboxDirections({
+accessToken: mapboxgl.accessToken
+}),
+'top-left'
+);
+  </script>
   </center>
 
 </body>

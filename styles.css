@@ -1,0 +1,135 @@
+.superior {
+	font-family: Arial, Helvetica, sans-serif;
+	color: white;
+	font-weight: bold;
+	font-style: italic;
+	background-color: red;
+	font-size: 100px;
+	text-align:center;
+	padding-left: 2%;
+	padding-right: 3.0%;
+	padding-bottom: 1%;
+	text-decoration: none;
+	/*No Select*/
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+
+.yest {
+  margin: auto;
+    width: 50%;
+    border: 3px solid green;
+
+}
+
+
+/*font-family: 'Libre Barcode 39 Text', cursive;*/
+/*font-family: 'Sarpanch', sans-serif;*/
+/*font-family: 'Zilla Slab Highlight', cursive;*/
+
+h2 {
+  color:blue;
+}
+
+.first-info {
+  	font-family: Helvetica, sans-serif;
+  	color: white;
+	font-style: normal;
+	font-size: 30px;
+
+	
+}
+
+.socialLinks {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	color: white;
+	text-align: center;
+	background-image: linear-gradient(black, grey);	
+	font-size: 10px;
+	color:white;
+	transition: 0.3s;
+	padding-bottom: 50px;
+	padding-top: 15px;
+  	white-space: nowrap;
+	text-decoration: none;
+	font-family: Helvetica;
+	
+}
+
+.linkPush {
+	padding-top: 40px;
+}
+
+.links {
+  	font-size: 18px;
+	color:white;
+	transition: 0.3s;
+	padding: 1%;
+  	white-space: nowrap;
+	text-decoration: none;
+	font-family: Helvetica;
+}
+
+.bottomLinks {
+	font-family: 'Roboto Mono', monospace;
+	font-size: 18px;
+	color:white;
+	transition: 0.3s;
+	padding: 1%;
+  	white-space: nowrap;
+	text-decoration: none;
+}
+
+.bottomLinks:hover {
+	
+	background-color: red;
+
+}
+
+.links:hover {
+	background-color: red;
+	animation: text-shadow-pop-left, 5s, infinite;
+	-webkit-animation: text-shadow-pop-left 5s infinite;
+}
+
+
+
+.smaller-subtext {
+	font-family: Helvetica, sans-serif;
+	color: white;
+  font-style: normal;
+  font-size: 15px;
+  
+}
+
+.superior-link {
+	font-family: Arial, Helvetica, sans-serif;
+	color: white;
+	font-weight: bold;
+	font-style: italic;
+	background-color: red;
+	font-size: 100px;
+	text-align:center;
+	padding-left: 2%;
+	padding-right: 3.0%;
+	padding-bottom: 1%;
+	text-decoration: none;
+	/*No Select*/
+	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
