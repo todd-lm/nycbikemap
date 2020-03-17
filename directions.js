@@ -7272,7 +7272,7 @@
      *
      * @return {MapboxDirections} `this`
      */
-    var MapboxDirections = function ([options.alternatives=true]) {
+    var MapboxDirections = function () {
       function MapboxDirections(options) {
         _classCallCheck(this, MapboxDirections);
     

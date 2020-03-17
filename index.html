@@ -21,19 +21,14 @@
 
 <body style="background-color: white">
   <script src="directions.js"></script>
-  
-  <link
-rel="stylesheet"
-href="directions.css"
-type="text/css"
-/>
+  <link rel="stylesheet" href="directions.css" type="text/css"/>
 
-<center>
   <div id='map'></div>
   <script>
 
+//Check to see if browser is supported
 if (!mapboxgl.supported()) {
-alert('Your browser does not support Mapbox GL');
+alert('Your browser does not support NYC Bike Map');
 } else {
 
   mapboxgl.accessToken = 'pk.eyJ1IjoidG9kZGxtIiwiYSI6ImNrN3RuYzRjaDB2Zm4zZm5yOW42Ymt0cDQifQ.x1fVFY167sQIIxb3a2zMpQ';
@@ -42,6 +37,7 @@ alert('Your browser does not support Mapbox GL');
   style: 'mapbox://styles/toddlm/ck7tne8954uck1iplsky5igqx'
   });
 }
+
 // Add geolocate control to the map.
 map.addControl(
 new mapboxgl.GeolocateControl({
@@ -51,16 +47,27 @@ enableHighAccuracy: true
 trackUserLocation: true
 })
 );
+//Add Fullscreen
+map.addControl(new mapboxgl.FullscreenControl());
+//Add Navigation
+map.addControl(new mapboxgl.NavigationControl());
  //Add navigation 
  
-map.addControl(
+ var directions = new MapboxDirections({
+  accessToken: 'YOUR-MAPBOX-ACCESS-TOKEN',
+  profile: 'mapbox/cycling',
+  alternatives: true ,
+
+});
+
+map.addControl(directions,'top-left')(
 new MapboxDirections({
 accessToken: mapboxgl.accessToken
 }),
-'top-left'
+
 );
+//Fullscreen Control
   </script>
-  </center>
 
 </body>
 </html>
