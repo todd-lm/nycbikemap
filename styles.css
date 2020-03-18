@@ -23,7 +23,7 @@
 	display: none;
 }
 .nav-mobile li {
-	width: 100%;
+	width: 95%;
 	height: 45px;
 	line-height: 46px;
 	text-align: center;
@@ -81,7 +81,7 @@
 .nav-mobile .menu-container {
 	width: 65px;
 	float: left;
-	cursor: pointer;
+	/* cursor: pointer; */
 	position: absolute;
 }
 .nav-mobile .menu-container .menu-sidebar {
