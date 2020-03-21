@@ -5,7 +5,7 @@
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
 	
   <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet" async> 
 
   
   <!-- <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script> -->
@@ -16,17 +16,29 @@
     #map { position: absolute; top: 45px; bottom: 0; width: 100%; }
     p {font-family: Arial, Helvetica, sans-serif; margin-left: 3%; margin-right: 3%;}
   </style>
+  
+  <script src="modernizr.js"></script>
 
 </head>
 <title>NYC Bike Map</title>
 
 <body style="background-color: white">
-  
   <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' async/>
 
   <script src="directions.js"></script>
-
-  <script src="modernizr.js"></script>
+  
+  <!-- <script>
+    (function() {
+    if(Modernizr.touchevents === false) {
+        var theScript = document.createElement('script');
+        theScript.type = 'text/javascript';
+        theScript.src = 'directions.js';
+     
+        var head = document.getElementsByTagName('head')[0];
+        body.appendChild(theScript);
+    }
+    })();
+    </script> -->
 
   <link rel="stylesheet" href="directions.css" type="text/css" async/>
 
