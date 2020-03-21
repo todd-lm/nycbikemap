@@ -163,3 +163,8 @@
 	z-index: 1;
 	transition: width 0.35s cubic-bezier(0, 0, 0.3, 1);
 }
+
+.legend-image {
+	margin-left: 3%;
+	padding-bottom: 0px;
+}
