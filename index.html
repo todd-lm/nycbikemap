@@ -25,6 +25,9 @@
   <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' async/>
 
   <script src="directions.js"></script>
+
+  <script src="modernizr.js"></script>
+
   <link rel="stylesheet" href="directions.css" type="text/css" async/>
 
 
@@ -162,13 +165,7 @@ trackUserLocation: true
 //Add Fullscreen
 map.addControl(new mapboxgl.FullscreenControl());
 
-if (Modernizr.touch) {
-
-}
-else 
-{
-    
-
+if (Modernizr.touchevents ===false) {
 //Add Navigation
 map.addControl(new mapboxgl.NavigationControl());
  //Add navigation 
@@ -189,6 +186,10 @@ accessToken: mapboxgl.accessToken,
 
 );
 }
+   
+
+
+
 
   </script>
 
