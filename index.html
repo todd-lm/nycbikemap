@@ -161,6 +161,14 @@ trackUserLocation: true
 );
 //Add Fullscreen
 map.addControl(new mapboxgl.FullscreenControl());
+
+if (Modernizr.touch) {
+
+}
+else 
+{
+    
+
 //Add Navigation
 map.addControl(new mapboxgl.NavigationControl());
  //Add navigation 
@@ -180,7 +188,8 @@ accessToken: mapboxgl.accessToken,
 }),
 
 );
-//Fullscreen Control
+}
+
   </script>
 
 </body>
