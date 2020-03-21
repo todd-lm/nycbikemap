@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-	
+  <meta name="Description" 
+  content="The best, free, interactive Bike Network Map for New York City that combines live data from NYC OpenData, Citi Bike and The City of New York. Includes information, updated March 2020, about NYC Bike Lanes, Greenways, Bike Paths, Citi Bike, Bike Routes, Bike Parking and more NYCBike resources.">
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet" defer> 
 
@@ -18,7 +19,14 @@
   </style>
   
   <script src="modernizr.js"></script>
-
+<!-- Favicons: -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/icons/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/icons/apple-touch-icon-152x152.png" />
+<link rel="icon" type="image/png" href="images/icons/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="images/icons/favicon-16x16.png" sizes="16x16" />
+<meta name="application-name" content="NYC Bike Map"/>
+<meta name="msapplication-TileColor" content="#FFFFFF" />
+<meta name="msapplication-TileImage" content="images/icons/mstile-144x144.png" />
 </head>
 <title>NYC Bike Map</title>
 
@@ -109,14 +117,14 @@
             <source type="image/jp2" srcset="images/citibike.jp2">
               <img class = "legend-image" src = "images/citibike.png" height="30%" width="80%">
           </picture>
-          <p style = "line-height: normal; padding-bottom: 10%;">Citi bike dock locations, updated April 2020. Learn more about Citi Bike and get a free month, exclusive to NYC Bike Map users <a style="color: blue;"  target="_blank" href="https://refer.citibikenyc.com/s/leemillsteintodd">here.</a></p>
+          <p style = "line-height: normal; padding-bottom: 10%;">Citi bike dock locations, updated April 2020. Learn more about Citi Bike and get a free month, exclusive to NYC Bike Map users <a style="color: blue;"  rel="noopener" target="_blank" href="https://refer.citibikenyc.com/s/leemillsteintodd">here.</a></p>
           <h1 style="margin:3%;">Bike Shelters:</h1>
           <picture>
             <source srcset="images/sheltered.webp"  type="image/webp">
             <source type="image/jp2" srcset="images/sheltered.jp2">
               <img class = "legend-image" src = "images/sheltered.png" height="20%" width="40%">
           </picture>
-          <p style = "line-height: normal;">There are a few dedicated bike shelter locations located throughout the city. Find out more <a style = "color:blue" target= "_blank" href="https://www1.nyc.gov/html/dot/html/bicyclists/bicycleparking.shtml">here.</a></p>
+          <p style = "line-height: normal;">There are a few dedicated bike shelter locations located throughout the city. Find out more <a style = "color:blue" rel="noopener" target= "_blank" href="https://www1.nyc.gov/html/dot/html/bicyclists/bicycleparking.shtml">here.</a></p>
           <h1 style="margin:3%;">Standard Bike Racks:</h1>
           <picture>
             <source srcset="images/rack.webp"  type="image/webp">
@@ -137,8 +145,8 @@
             <label class="submenu-label" for="sub-three">Back</label>
             <div class="arrow left">&#8249;</div>              
           </li>      
-          <li><a target = "_blank" href="https://www.instagram.com/superior_labs/">Instagram</a></li>
-          <li><a target = "_blank" href="https://github.com/todd-lm/nycbikemap">Github</a></li>   
+          <li><a target = "_blank" rel="noopener" href="https://www.instagram.com/superior_labs/">Instagram</a></li>
+          <li><a target = "_blank" rel="noopener" href="https://github.com/todd-lm/nycbikemap">Github</a></li>   
      <!-- <li><a href="#">Twitter</a></li> -->
 
         </ul>              
@@ -146,7 +154,7 @@
 
       <li><a href="about.html">Learn more about NYC Bike Map</a></li>
 
-      <li><a target = "_blank" href="https://refer.citibikenyc.com/s/leemillsteintodd">Get a free month of Citi Bike!</a></li>
+      <li><a target = "_blank" rel="noopener" href="https://refer.citibikenyc.com/s/leemillsteintodd">Get a free month of Citi Bike!</a></li>
     
                                          
     </ul> 
