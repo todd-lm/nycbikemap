@@ -217,28 +217,28 @@ trackUserLocation: true
 );
 //Add Fullscreen
 map.addControl(new mapboxgl.FullscreenControl());
-
-if (Modernizr.touchevents ===false) {
-//Add Navigation
+//Add Map Navigation
 map.addControl(new mapboxgl.NavigationControl());
- //Add navigation 
+// if (Modernizr.touchevents ===false) {
+
+//  //Add navigation 
  
- var directions = new MapboxDirections({
-  accessToken: 'pk.eyJ1IjoidG9kZGxtIiwiYSI6ImNrN3RuYzRjaDB2Zm4zZm5yOW42Ymt0cDQifQ.x1fVFY167sQIIxb3a2zMpQ',
-  profile: 'mapbox/cycling',
-  alternatives: true,
-  profileSwitcher: false,
+//  var directions = new MapboxDirections({
+//   accessToken: 'pk.eyJ1IjoidG9kZGxtIiwiYSI6ImNrN3RuYzRjaDB2Zm4zZm5yOW42Ymt0cDQifQ.x1fVFY167sQIIxb3a2zMpQ',
+//   profile: 'mapbox/cycling',
+//   alternatives: true,
+//   profileSwitcher: false,
 
 
-});
+// });
 
-map.addControl(directions,'bottom-right')(
-new MapboxDirections({
-accessToken: mapboxgl.accessToken,
-}),
+// map.addControl(directions,'bottom-right')(
+// new MapboxDirections({
+// accessToken: mapboxgl.accessToken,
+// }),
 
-);
-}
+// );
+// }
    
   </script>
 
