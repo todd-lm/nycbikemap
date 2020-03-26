@@ -181,7 +181,7 @@
       <a style = ""   href="https://twitter.com/nyc_bike_map?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-dnt="true" data-show-count="false">Follow @nyc_bike_map</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       <!-- Place this tag where you want the button to render. -->
         <a class="github-button" href="https://github.com/todd-lm/nycbikemap" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star tpixelminer/nycbikemap on GitHub">Star On Github</a>
-    <p>NYC Bike Map v1.0.1</p>
+    <p>NYC Bike Map v1.0.2</p>
     <footer>
       <small>&copy; Copyright 2020, Todd Lee-Millstein</small>
 </footer>
@@ -206,7 +206,9 @@ alert('Your browser does not support NYC Bike Map');
   mapboxgl.accessToken = 'pk.eyJ1IjoidG9kZGxtIiwiYSI6ImNrN3RuYzRjaDB2Zm4zZm5yOW42Ymt0cDQifQ.x1fVFY167sQIIxb3a2zMpQ';
   var map = new mapboxgl.Map({
   container: 'map',
-  style: 'mapbox://styles/toddlm/ck7tne8954uck1iplsky5igqx?optimize=true'
+  style: 'mapbox://styles/toddlm/ck7tne8954uck1iplsky5igqx?optimize=true',
+  minZoom: '9',
+  attributionControl: false,
   });
 }
 
@@ -219,6 +221,10 @@ enableHighAccuracy: true
 trackUserLocation: true
 })
 );
+map.addControl(new mapboxgl.AttributionControl({
+        compact: true,
+    }));
+
 //Add Fullscreen
 map.addControl(new mapboxgl.FullscreenControl());
 //Add Map Navigation
@@ -243,7 +249,47 @@ map.addControl(new mapboxgl.NavigationControl());
 
 // );
 // }
+// Oonee Markers:
+
+var popupbklyn = new mapboxgl.Popup({ offset: 25 }).setHTML(
+'<p><strong>Oonee Pod - Atlantic Terminal</strong></p> <picture> <source srcset="images/ooneepodimage.webp"  type="image/webp"> <source type="image/jp2" srcset="images/ooneepodimage.jp2"> <img src = "images/ooneepodimage.jpeg" height="40%" width="70%"></picture>  <p>Oonee is a secure public bike parking hub. Learn more about this Oonee Pod at <a target = "_blank" href ="https://www.ooneepod.com/atlantic-terminal">https://www.ooneepod.com/atlantic-terminal</a></p>  '
+);
+
+
+var popupjc = new mapboxgl.Popup({ offset: 25 }).setHTML(
+'<p><strong>Oonee Pod - Journal Square</strong></p> <picture> <source srcset="images/ooneepodimagejc.webp"  type="image/webp"> <source type="image/jp2" srcset="images/ooneepodimagejc.jp2"> <img src = "images/ooneepodimagejc.jpg" height="40%" width="70%"></picture>   <p>Oonee is a secure public bike parking hub. Learn more about this Oonee Pod at <a target = "_blank" href ="https://www.ooneepod.com/journal-square">https://www.ooneepod.com/journal-square</a></p> '
+);
+ 
+// create DOM element for the marker
+var ooneebklyn = document.createElement('div');
+ooneebklyn.id = 'marker';
+
+var ooneejc = document.createElement('div');
+ooneejc.id = 'marker';
+ 
+// create the marker
+
+new mapboxgl.Marker(ooneebklyn)
+.setLngLat([-73.975693, 40.683709])
+.setPopup(popupbklyn) // sets a popup on this marker
+.addTo(map);
+
+new mapboxgl.Marker(ooneejc)
+.setLngLat([-74.063588, 40.731881,])
+.setPopup(popupjc) // sets a popup on this marker
+.addTo(map);
    
+map.on('zoom', function() {
+if (map.getZoom() > 11.25) {
+ooneebklyn.style.display = 'block';
+ooneejc.style.display = 'block';
+
+} else {
+ooneebklyn.style.display = 'none';
+ooneejc.style.display = 'none';
+
+}
+});
   </script>
 
 </body>

@@ -168,3 +168,23 @@
 	margin-left: 3%;
 	padding-bottom: 0px;
 }
+
+#marker {
+background-image: url('images/ooneicon.jpg');
+background-size: cover;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+cursor: pointer;
+}
+ 
+.mapboxgl-popup {
+max-width: 250px;
+margin-left: 3%;
+margin-right: 3%;
+}
+
+.mapboxgl-popup img {
+	padding-left: 3%;
+	padding-right: 3%;
+	}
