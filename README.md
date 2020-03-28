@@ -11,3 +11,4 @@ Bike Rack by Blair Adams from the Noun Project
 Horizontal Two Way Arrow by Hunter Beal from the Noun Project
 Right Arrow by Hunter Beal from the Noun Project
 Hazard by Adrien Coquet from the Noun Project
+Info by Poups from the Noun Project
