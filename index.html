@@ -73,7 +73,7 @@
 
 <!-- Menu  -->
 <ul class="nav-mobile">
-  <li>NYC Bike Map</li>        
+  <li class="unselectable">NYC Bike Map</li>        
   <li style= "font-family: 'Roboto', sans-serif;" class="menu-container"> 
     <input id="menu-toggle" type="checkbox">
     <label for="menu-toggle" class="menu-button">  
@@ -289,6 +289,152 @@ ooneebklyn.style.display = 'none';
 ooneejc.style.display = 'none';
 
 }
+});
+
+
+map.on('load', function() {
+map.addSource('places', {
+'type': 'geojson',
+'data': {
+'type': 'FeatureCollection',
+'features': [
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Orchard Beach Boardwalk</strong></p> <p>Bicycles Permitted 6am – 10am only (Memorial Day to October 1) <a class="popup-link" href="https://www.nycgovparks.org/parks/pelham-bay-park/facilities/beaches" target="_blank">https://www.nycgovparks.org/parks/pelham-bay-park/facilities/beaches</a></p>',
+'icon': 'hazard'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.793106, 40.866276]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Governors Island</strong></p> <p>Bike-friendly destination featuring The Hills and seven miles of car-free biking with spectacular views of Lower Manhattan, Brooklyn, and New York Harbor. </p><p>Open to the public 7 days a week from May 1 – October 1. </p><p> For hours of operation, event information, and Manhattan, Brooklyn, and NYC Ferry schedules and fare information, visit <a class="popup-link" href="https://www.govisland.com" target="_blank">https://www.govisland.com</a></p>',
+'icon': 'info'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-74.022017, 40.68744]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Floyd Bennet Field</strong></p> <p>Floyd Bennett Field allows visitors to bike the historic runways and hike in the North Forty Natural Area. With a permit, visitors may camp in one of New York City’s only campgrounds, fish, and boat in Jamaica Bay.</p> <a class="popup-link" href="https://www.nps.gov/gate/planyourvisit/index.htm" target="_blank">https://www.nps.gov/gate/planyourvisit/index.htm</a>',
+'icon': 'info'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.889365, 40.593132]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Manhattan Beach Boardwalk</strong></p> <p>Bicycles Permitted 6am – 10am Memorial Day to October 1. Bicycles Permitted 6am - 9pm all other times <a class="popup-link" href="https://www.nycgovparks.org/parks/manhattan-beach-park" target="_blank">https://www.nycgovparks.org/parks/manhattan-beach-park</a></p>',
+'icon': 'hazard'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.944136, 40.57647]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Coney Island Boardwalk</strong></p> <p>Bicycles Permitted 6am – 10am Memorial Day to October 1. Bicycles Permitted 6am - 9pm all other times <a class="popup-link" href="https://www.nycgovparks.org/parks/coney-island-beach-and-boardwalk" target="_blank">https://www.nycgovparks.org/parks/coney-island-beach-and-boardwalk</a></p>',
+'icon': 'hazard'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.968759, 40.573951]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>High Bridge Hours</strong></p> <p>Summer: 7am-8pm </p> <p> Winter: 7am-7pm</p>',
+'icon': 'hazard'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.930183, 40.8423]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Silver Lake Park Auto-Free Hours</strong></p> <p>Friday 5pm to Monday 7am</p> <p>Holidays 5pm day before 7am day after.</p>',
+'icon': 'hazard'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-74.097462, 40.627894]
+}
+},
+
+
+]
+}
+});
+// Add a layer showing the places.
+map.addLayer({
+'id': 'places',
+'type': 'symbol',
+'source': 'places',
+'layout': {
+'icon-image': '{icon}', //{icon}
+'icon-allow-overlap': true,
+'icon-size': .32
+
+}
+});
+ 
+// When a click event occurs on a feature in the places layer, open a popup at the
+// location of the feature, with description HTML from its properties.
+map.on('click', 'places', function(e) {
+var coordinates = e.features[0].geometry.coordinates.slice();
+var description = e.features[0].properties.description;
+ 
+// Ensure that if the map is zoomed out such that multiple
+// copies of the feature are visible, the popup appears
+// over the copy being pointed to.
+while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+}
+ 
+new mapboxgl.Popup()
+.setLngLat(coordinates)
+.setHTML(description)
+.addTo(map);
+});
+ 
+// Change the cursor to a pointer when the mouse is over the places layer.
+map.on('mouseenter', 'places', function() {
+map.getCanvas().style.cursor = 'pointer';
+});
+ 
+// Change it back to a pointer when it leaves.
+map.on('mouseleave', 'places', function() {
+map.getCanvas().style.cursor = '';
+});
 });
   </script>
 

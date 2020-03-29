@@ -178,13 +178,24 @@ border-radius: 50%;
 cursor: pointer;
 }
  
-.mapboxgl-popup {
-max-width: 250px;
-margin-left: 3%;
-margin-right: 3%;
+.mapboxgl-popup-content {
+max-width: 400;
+}
+
+.popup-link{
+	word-wrap:break-word;
 }
 
 .mapboxgl-popup img {
 	padding-left: 3%;
 	padding-right: 3%;
+	}
+	
+	.unselectable {
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
 	}
