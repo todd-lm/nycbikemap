@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-
+  <style>
+    body { margin: 0; padding: 0; }
+    #map { position: absolute; top: 45px; bottom: 0; width: 100%; }
+    p {font-family: Arial, Helvetica, sans-serif; margin-left: 3%; margin-right: 3%;}
+  </style>
   <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132447077-2"></script>
 <script>
@@ -12,7 +16,6 @@
   gtag('config', 'UA-132447077-2');
 </script>
 
-
   <meta charset="utf-8" />
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
   <meta name="Description" 
@@ -20,15 +23,8 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet" defer> 
 
-  
   <!-- <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script> -->
   <script src='mapbox-gl.js'></script> 
-  
-  <style>
-    body { margin: 0; padding: 0; }
-    #map { position: absolute; top: 45px; bottom: 0; width: 100%; }
-    p {font-family: Arial, Helvetica, sans-serif; margin-left: 3%; margin-right: 3%;}
-  </style>
   
   <script src="modernizr.js"></script>
 <!-- Favicons: -->
@@ -43,12 +39,9 @@
 <!-- Donation Button: -->
 <!-- <script data-name="BMC-Widget" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="toddlm" data-description="Your donation will help us purchase a dedicated domain name. This will enable us to reach more users and increase the speed of our app. If you aren't able to donate, your feedback is just as valued!" data-message="" data-color="#FF813F" data-position="right" data-x_margin="10" data-y_margin="18"></script> -->
 
-
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
 <title>NYC Bike Map</title>
-
-
 
 <body style="background-color: white">
   <link href='mapbox-gl.css' rel='stylesheet'/>
@@ -70,7 +63,6 @@
 
   <link rel="stylesheet" href="directions.css" type="text/css" defer/>
 
-
 <!-- Menu  -->
 <ul class="nav-mobile">
   <li class="unselectable">NYC Bike Map</li>        
@@ -86,20 +78,41 @@
 
       <li>
         <input type="checkbox" id="sub-one" class="submenu-toggle">        
-        <label class="submenu-label" for="sub-one">Filter</label>
+        <label class="submenu-label" for="sub-one">About NYC Bike Map</label>
         <div class="arrow right">&#8250;</div> 
-        <ul class="menu-sub">
+        <ul class="menu-sub" style = "padding: 0px; 
+        overflow-y: auto;" >
           <li class="menu-sub-title">
             <label class="submenu-label" for="sub-one">Back</label>
             <div class="arrow left">&#8249;</div>              
-          </li>      
-          <li><a href="#">Filter feature coming soon!</a></li>
-          <!-- <li><a href="#">Sub-item</a></li>
-          <li><a href="#">Sub-item</a></li>     
-          <li><a href="#">Sub-item</a></li>                                 -->
+          </li>       
+          <div class = "about-section">
+
+    <strong><p style = "font-size: larger;">NYC Bike Map is a free interactive bike network map for New York City that combines information from NYC OpenData, Citi Bike and other sources. It currently displays the NYC Bike lane network, bike racks, bike shelters, Citi Bike docks, Oonee Pods and Bike tips + hazards.
+    </p> </strong>
+    <h1>Who made NYC Bike Map?</h1>
+    <p>NYC Bike Map was created and is under development by <a style="	display: inline; text-decoration: none; color:navy;" class ="about-section-link" href="https://todd-lm.github.io"> Todd Lee-Millstein</a>. It is also open-source so anybody is able to contribute to it if they want.</p>
+    <h1>Why should I use NYC Bike Map?</h1>
+    <p>Currently, there is no good interacvtive bike map for NYC availible. The DOT only provides a PDF version of the NYC bike network which lacks a lot of functionality. Google Maps also has an interactive version of the bike map but it doesn't provide the same depth of information that NYC Bike Map has.</p>
+    <h1>Can I advertise on NYC Bike Map?</h1>
+    <p>Yes! Contact us for more information.</p>
+    <h1>How can I support NYC Bike Map?</h1>
+    <p>We currently don't have any operating costs but if you would like to contribute to the code, you can do so at <a href ="https://github.com/todd-lm/nycbikemap">https://github.com/todd-lm/nycbikemap</a> Your feedback is also extremley important to the development of NYC Bike Map so if you have any, please let us know!</p>
+    <h1>What new features are coming to NYC Bike Map?</h1>
+    <p>NYC Bike Map is still under development so new features are constantly being added. If you would like to see any features added or you have any suggestions, let us know! Here is a broad list of features that will be added, in no particular order:</p>
+    
+      <ul>Live Citi Bike Intregration</ul>
+      <ul>Custom Filtering</ul>
+      <ul>Native IOS and Andriod Apps</ul>
+      <ul>Dedicated host url</ul>
+      <ul>Improved Navigation</ul>
+      <ul>Saved locations</ul>
+      <ul>Expanded bike parking information</ul>
+    
+          </div>
         </ul>              
       </li>  
-      
+     
       <li>
         <input type="checkbox" id="sub-two" class="submenu-toggle">        
         <label class="submenu-label" for="sub-two">Legend</label>
@@ -178,7 +191,7 @@
       <li><a target = "_blank" rel="noopener" href="https://refer.citibikenyc.com/s/leemillsteintodd">Get a free month of Citi Bike!</a></li>
 
       <li><a href="https://www.producthunt.com/posts/nyc-bike-map?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-nyc-bike-map" target="_blank" rel = "noopener"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=189060&theme=light" alt="NYC Bike Map - The most powerful open source bike map for NYC. | Product Hunt Embed" style="width: 250px; height: 54px;" width="250px" height="54px"></a></li>
-      <a style = ""   href="https://twitter.com/nyc_bike_map?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-dnt="true" data-show-count="false">Follow @nyc_bike_map</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <a href="https://twitter.com/nyc_bike_map?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-dnt="true" data-show-count="false">Follow @nyc_bike_map</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       <!-- Place this tag where you want the button to render. -->
         <a class="github-button" href="https://github.com/todd-lm/nycbikemap" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star tpixelminer/nycbikemap on GitHub">Star On Github</a>
     <p>NYC Bike Map v1.1.0</p>
@@ -437,6 +450,5 @@ map.getCanvas().style.cursor = '';
 });
 });
   </script>
-
 </body>
 </html>

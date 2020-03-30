@@ -1,3 +1,9 @@
+.about-section-link{
+	display: inline;
+	text-decoration: none;
+	color:navy;
+}
+
 .nav-mobile {
 	background: #020079;
 	color: #fff;
@@ -199,3 +205,13 @@ max-width: 400;
 		-ms-user-select: none;
 		user-select: none;
 	}
+
+	.about-section h1 {font-family: Helvetica, sans-serif; margin-left: 2%; margin-right: 3%;}
+	.about-section p {font-family: Arial, Helvetica, sans-serif; margin-left: 2%; margin-right: 3%;}
+	.about-section h2 {font-family: Helvetica, sans-serif; margin-left: 2%; margin-right: 3%;}
+
+	.about-section {
+		line-height: 1.3;
+		padding-bottom: 100px;
+	}
+
