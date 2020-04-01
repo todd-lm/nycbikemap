@@ -18,3 +18,4 @@ Icons Used:
 * Hazard by Adrien Coquet from the Noun Project
 * Info by Poups from the Noun Project
 * walking bike by corpus delicti from the Noun Project
+* Stairs by Vadim Solomakhin from the Noun Project
