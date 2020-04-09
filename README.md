@@ -3,7 +3,7 @@ A unified bike map for NYC that combines information from NYC OpenData, Citi Bik
 
 Sources Used:
 * Citi Bike Dock Locations: https://www.citibikenyc.com/system-data Updated March 30, 2020
-* NYC Bike Network Map: https://data.cityofnewyork.us/Transportation/Bicycle-Routes/7vsa-caz7 Updated March 30, 2020
+* NYC Bike Network Map: https://data.cityofnewyork.us/Transportation/Bicycle-Routes/7vsa-caz7 Updated March 31, 2020
 * Offical Hoboken Bike Network Map https://www.google.com/maps/d/u/0/viewer?hl=en&gl=us&ptab=2&ie=UTF8&oe=UTF8&msa=0&source=embed&t=h&ll=40.7453240198667%2C-74.02821426216644&spn=0.02276%2C0.021029&z=15&mid=1NadKVHzfZxw36ZqQy19kIHjwi7M Updated March 30th, 2020
 * PDF Version of NYC Bike Map Updated March 30, 2020
 * Oonee Pod Locations (manually fetched, March 30, 2020)
