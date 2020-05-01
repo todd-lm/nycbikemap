@@ -1,0 +1,435 @@
+'type': 'FeatureCollection',
+'features': [
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Orchard Beach Boardwalk</strong></p> <p>Bicycles Permitted 6am – 10am only (Memorial Day to October 1) <a class="popup-link" href="https://www.nycgovparks.org/parks/pelham-bay-park/facilities/beaches" target="_blank">https://www.nycgovparks.org/parks/pelham-bay-park/facilities/beaches</a></p>',
+'icon': 'hazard'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.793106, 40.866276]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Governors Island</strong></p> <p>Bike-friendly destination featuring The Hills and seven miles of car-free biking with spectacular views of Lower Manhattan, Brooklyn, and New York Harbor. </p><p>Open to the public 7 days a week from May 1 – October 1. </p><p> For hours of operation, event information, and Manhattan, Brooklyn, and NYC Ferry schedules and fare information, visit <a class="popup-link" href="https://www.govisland.com" target="_blank">https://www.govisland.com</a></p>',
+'icon': 'info'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-74.022017, 40.68744]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Floyd Bennet Field</strong></p> <p>Floyd Bennett Field allows visitors to bike the historic runways and hike in the North Forty Natural Area. With a permit, visitors may camp in one of New York City’s only campgrounds, fish, and boat in Jamaica Bay.</p> <a class="popup-link" href="https://www.nps.gov/gate/planyourvisit/index.htm" target="_blank">https://www.nps.gov/gate/planyourvisit/index.htm</a>',
+'icon': 'info'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.889365, 40.593132]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Manhattan Beach Boardwalk</strong></p> <p>Bicycles Permitted 6am – 10am Memorial Day to October 1. Bicycles Permitted 6am - 9pm all other times <a class="popup-link" href="https://www.nycgovparks.org/parks/manhattan-beach-park" target="_blank">https://www.nycgovparks.org/parks/manhattan-beach-park</a></p>',
+'icon': 'hazard'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.944136, 40.57647]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Coney Island Boardwalk</strong></p> <p>Bicycles Permitted 6am – 10am Memorial Day to October 1. Bicycles Permitted 6am - 9pm all other times <a class="popup-link" href="https://www.nycgovparks.org/parks/coney-island-beach-and-boardwalk" target="_blank">https://www.nycgovparks.org/parks/coney-island-beach-and-boardwalk</a></p>',
+'icon': 'hazard'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.968759, 40.573951]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>High Bridge Hours</strong></p> <p>Summer: 7am-8pm </p> <p> Winter: 7am-7pm</p>',
+'icon': 'hazard'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.930183, 40.8423]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Silver Lake Park Auto-Free Hours</strong></p> <p>Friday 5pm to Monday 7am</p> <p>Holidays 5pm day before 7am day after.</p>',
+'icon': 'hazard'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-74.097462, 40.627894]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Steep</strong></p>',
+'icon': 'steep'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.911853, 40.896192]
+}
+},
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Steep</strong></p>',
+'icon': 'steep'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.90747, 40.902132]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Walk Bike</strong></p>',
+'icon': 'walkbike'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.922367, 40.877683]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Walk Bike</strong></p>',
+'icon': 'walkbike'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.911037, 40.873675]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Walk Bike</strong></p>',
+'icon': 'walkbike'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.9149, 40.862706]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Walk Bike</strong></p>',
+'icon': 'walkbike'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.927946, 40.846703]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Walk Bike</strong></p>',
+'icon': 'walkbike'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.820915, 40.869067]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Walk Bike</strong></p>',
+'icon': 'walkbike'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.81568, 40.862219]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Walk Bike</strong></p>',
+'icon': 'walkbike'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.933761, 40.828115]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Walk Bike</strong></p>',
+'icon': 'walkbike'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.936186, 40.828651]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Walk Bike</strong></p>',
+'icon': 'walkbike'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.933311, 40.819461]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Walk Bike</strong></p>',
+'icon': 'walkbike'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.933053, 40.814037]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Walk Bike</strong></p>',
+'icon': 'walkbike'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.927774, 40.800231]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Walk Bike</strong></p>',
+'icon': 'walkbike'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.919063, 40.798769]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Walk Bike</strong></p>',
+'icon': 'walkbike'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.926959, 40.779794]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Walk Bike</strong></p>',
+'icon': 'walkbike'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.945713, 40.763397]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Walk Bike</strong></p>',
+'icon': 'walkbike'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.945713, 40.763397]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Walk Bike</strong></p> <p>Use North Sidewalk </p>',
+'icon': 'walkbike'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.837008, 40.762569]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Walk Bike</strong></p><p>Use West Sidewalk</p>',
+'icon': 'walkbike'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.73723, 40.593165]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Walk Bike</strong></p><p>Use East Sidewalk</p>',
+'icon': 'walkbike'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.819885, 40.591796]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Walk Bike</strong></p><p>Use West Sidewalk</p>',
+'icon': 'walkbike'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.884945, 40.573283]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Stairs</strong></p>',
+'icon': 'stairs'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.931202, 40.866941]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'minzoom': 12.5,
+'description':
+'<p><strong>Stairs</strong></p>',
+'icon': 'stairs'
+
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.929384, 40.873813]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Steep</strong></p>',
+'icon': 'steep'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.943738, 40.850818]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Oonee Pod - Atlantic Terminal</strong></p> <picture> <source srcset="images/ooneepodimage.webp"  type="image/webp"> <source type="image/jp2" srcset="images/ooneepodimage.jp2"> <img src = "images/ooneepodimage.jpeg" height="40%" width="70%"></picture>  <p>Oonee is a secure public bike parking hub. Learn more about this Oonee Pod at <a target = "_blank" href ="https://www.ooneepod.com/atlantic-terminal">https://www.ooneepod.com/atlantic-terminal</a></p>',
+'icon': 'ooneepod'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.975693, 40.683709]
+}
+},
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Oonee Pod - Journal Square</strong></p> <picture> <source srcset="images/ooneepodimagejc.webp"  type="image/webp"> <source type="image/jp2" srcset="images/ooneepodimagejc.jp2"> <img src = "images/ooneepodimagejc.jpg" height="40%" width="70%"></picture>   <p>Oonee is a secure public bike parking hub. Learn more about this Oonee Pod at <a target = "_blank" href ="https://www.ooneepod.com/journal-square">https://www.ooneepod.com/journal-square</a></p> ',
+'icon': 'ooneepod'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-74.063588, 40.731881]
+}
+}
+
+
+]

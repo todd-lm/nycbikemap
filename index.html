@@ -47,7 +47,19 @@
   <link href='mapbox-gl.css' rel='stylesheet'/>
 
   <script src="directions.js"></script>
-  
+  <script src="https://d3js.org/d3-array.v2.min.js"></script>
+<script src="https://d3js.org/d3-color.v1.min.js"></script>
+<script src="https://d3js.org/d3-format.v1.min.js"></script>
+<script src="https://d3js.org/d3-interpolate.v1.min.js"></script>
+<script src="https://d3js.org/d3-time.v1.min.js"></script>
+<script src="https://d3js.org/d3-time-format.v2.min.js"></script>
+<script src="https://d3js.org/d3-scale.v3.min.js"></script>
+<script>
+
+var x = d3.scaleLinear();
+
+</script>
+
   <!-- <script>
     (function() {
     if(Modernizr.touchevents === false) {
@@ -248,6 +260,8 @@
 
 
   <div id='map'></div>
+  <nav id="filter-group" class="filter-group"></nav>
+
   <script>
 
 //Check to see if browser is supported
@@ -255,99 +269,8 @@ if (!mapboxgl.supported()) {
 alert('Your browser does not support NYC Bike Map');
 } else {
 
-  mapboxgl.accessToken = 'pk.eyJ1IjoidG9kZGxtIiwiYSI6ImNrN3RuYzRjaDB2Zm4zZm5yOW42Ymt0cDQifQ.x1fVFY167sQIIxb3a2zMpQ';
-  var map = new mapboxgl.Map({
-  container: 'map',
-  style: 'mapbox://styles/toddlm/ck7tne8954uck1iplsky5igqx?optimize=true',
-  minZoom: '9',
-  attributionControl: false,
-  });
-}
-
-// Add geolocate control to the map.
-map.addControl(
-new mapboxgl.GeolocateControl({
-positionOptions: {
-enableHighAccuracy: true
-},
-trackUserLocation: true
-})
-);
-map.addControl(new mapboxgl.AttributionControl({
-        compact: true,
-    }));
-
-//Add Fullscreen
-map.addControl(new mapboxgl.FullscreenControl());
-//Add Map Navigation
-map.addControl(new mapboxgl.NavigationControl());
-// if (Modernizr.touchevents ===false) {
-
-//  //Add navigation 
- 
-//  var directions = new MapboxDirections({
-//   accessToken: 'pk.eyJ1IjoidG9kZGxtIiwiYSI6ImNrN3RuYzRjaDB2Zm4zZm5yOW42Ymt0cDQifQ.x1fVFY167sQIIxb3a2zMpQ',
-//   profile: 'mapbox/cycling',
-//   alternatives: true,
-//   profileSwitcher: false,
-
-
-// });
-
-// map.addControl(directions,'bottom-right')(
-// new MapboxDirections({
-// accessToken: mapboxgl.accessToken,
-// }),
-
-// );
-// }
-// Oonee Markers:
-
-var popupbklyn = new mapboxgl.Popup({ offset: 25 }).setHTML(
-'<p><strong>Oonee Pod - Atlantic Terminal</strong></p> <picture> <source srcset="images/ooneepodimage.webp"  type="image/webp"> <source type="image/jp2" srcset="images/ooneepodimage.jp2"> <img src = "images/ooneepodimage.jpeg" height="40%" width="70%"></picture>  <p>Oonee is a secure public bike parking hub. Learn more about this Oonee Pod at <a target = "_blank" href ="https://www.ooneepod.com/atlantic-terminal">https://www.ooneepod.com/atlantic-terminal</a></p>  '
-);
-
-
-var popupjc = new mapboxgl.Popup({ offset: 25 }).setHTML(
-'<p><strong>Oonee Pod - Journal Square</strong></p> <picture> <source srcset="images/ooneepodimagejc.webp"  type="image/webp"> <source type="image/jp2" srcset="images/ooneepodimagejc.jp2"> <img src = "images/ooneepodimagejc.jpg" height="40%" width="70%"></picture>   <p>Oonee is a secure public bike parking hub. Learn more about this Oonee Pod at <a target = "_blank" href ="https://www.ooneepod.com/journal-square">https://www.ooneepod.com/journal-square</a></p> '
-);
- 
-// create DOM element for the marker
-var ooneebklyn = document.createElement('div');
-ooneebklyn.id = 'marker';
-
-var ooneejc = document.createElement('div');
-ooneejc.id = 'marker';
- 
-// create the marker
-
-new mapboxgl.Marker(ooneebklyn)
-.setLngLat([-73.975693, 40.683709])
-.setPopup(popupbklyn) // sets a popup on this marker
-.addTo(map);
-
-new mapboxgl.Marker(ooneejc)
-.setLngLat([-74.063588, 40.731881,])
-.setPopup(popupjc) // sets a popup on this marker
-.addTo(map);
-   
-map.on('zoom', function() {
-if (map.getZoom() > 11.25) {
-ooneebklyn.style.display = 'block';
-ooneejc.style.display = 'block';
-
-} else {
-ooneebklyn.style.display = 'none';
-ooneejc.style.display = 'none';
-
-}
-});
-
-
-map.on('load', function() {
-map.addSource('places', {
-'type': 'geojson',
-'data': {
+mapboxgl.accessToken = 'pk.eyJ1IjoidG9kZGxtIiwiYSI6ImNrN3RuYzRjaDB2Zm4zZm5yOW42Ymt0cDQifQ.x1fVFY167sQIIxb3a2zMpQ';
+var places = {
 'type': 'FeatureCollection',
 'features': [
 
@@ -730,22 +653,11 @@ map.addSource('places', {
 {
 'type': 'Feature',
 'properties': {
+'minzoom': 12.5,
 'description':
 '<p><strong>Stairs</strong></p>',
 'icon': 'stairs'
-},
-'geometry': {
-'type': 'Point',
-'coordinates': [-73.929384, 40.873813]
-}
-},
 
-{
-'type': 'Feature',
-'properties': {
-'description':
-'<p><strong>Stairs</strong></p>',
-'icon': 'stairs'
 },
 'geometry': {
 'type': 'Point',
@@ -766,30 +678,150 @@ map.addSource('places', {
 }
 },
 
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Oonee Pod - Atlantic Terminal</strong></p> <picture> <source srcset="images/ooneepodimage.webp"  type="image/webp"> <source type="image/jp2" srcset="images/ooneepodimage.jp2"> <img src = "images/ooneepodimage.jpeg" height="40%" width="70%"></picture>  <p>Oonee is a secure public bike parking hub. Learn more about this Oonee Pod at <a target = "_blank" href ="https://www.ooneepod.com/atlantic-terminal">https://www.ooneepod.com/atlantic-terminal</a></p>',
+'icon': 'ooneepod'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.975693, 40.683709]
+}
+},
 
-
-
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Oonee Pod - Journal Square</strong></p> <picture> <source srcset="images/ooneepodimagejc.webp"  type="image/webp"> <source type="image/jp2" srcset="images/ooneepodimagejc.jp2"> <img src = "images/ooneepodimagejc.jpg" height="40%" width="70%"></picture>   <p>Oonee is a secure public bike parking hub. Learn more about this Oonee Pod at <a target = "_blank" href ="https://www.ooneepod.com/journal-square">https://www.ooneepod.com/journal-square</a></p> ',
+'icon': 'ooneepod'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-74.063588, 40.731881]
+}
+}
 
 
 ]
+};
+
+  var filterGroup = document.getElementById('filter-group');
+  var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/toddlm/ck7tne8954uck1iplsky5igqx?optimize=true',
+  minZoom: '9',
+  attributionControl: false,
+  });
 }
+
+// Add geolocate control to the map.
+map.addControl(
+new mapboxgl.GeolocateControl({
+positionOptions: {
+enableHighAccuracy: true
+},
+trackUserLocation: true
+})
+);
+map.addControl(new mapboxgl.AttributionControl({
+        compact: true,
+    }));
+
+//Add Fullscreen
+map.addControl(new mapboxgl.FullscreenControl());
+//Add Map Navigation
+map.addControl(new mapboxgl.NavigationControl());
+
+
+map.on('load', function() {
+// if (Modernizr.touchevents ===false) {
+
+//  //Add navigation 
+ 
+//  var directions = new MapboxDirections({
+//   accessToken: 'pk.eyJ1IjoidG9kZGxtIiwiYSI6ImNrN3RuYzRjaDB2Zm4zZm5yOW42Ymt0cDQifQ.x1fVFY167sQIIxb3a2zMpQ',
+//   profile: 'mapbox/cycling',
+//   alternatives: true,
+//   profileSwitcher: false,
+
+
+// });
+
+// map.addControl(directions,'bottom-right')(
+// new MapboxDirections({
+// accessToken: mapboxgl.accessToken,
+// }),
+
+// );
+// }
+
+
+
+map.addSource('places', {
+'type': 'geojson',
+
+'data': places
 });
-// Add a layer showing the places.
+
+places.features.forEach(function(feature) {
+var symbol = feature.properties['icon'];
+var layerID = 'poi-' + symbol;
+ 
+// Add a layer for this symbol type if it hasn't been added already.
+if (!map.getLayer(layerID)) {
 map.addLayer({
-'id': 'places',
+'id': layerID,
 'type': 'symbol',
 'source': 'places',
 'layout': {
-'icon-image': '{icon}', //{icon}
+'icon-image': symbol,
 'icon-allow-overlap': true,
 'icon-size': .32
-
-}
+},
+'filter': ['==', 'icon', symbol]
 });
  
+// Add checkbox and label elements for the layer.
+if (symbol=='walkbike'){
+  var altSymbolName = "walk bike";
+}
+else {
+  var altSymbolName = symbol;
+}
+
+var input = document.createElement('input');
+input.type = 'checkbox';
+input.id = layerID;
+if (symbol == 'walkbike' || symbol == 'stairs' || symbol == 'steep') {
+  input.checked = false;
+  map.setLayoutProperty('my-layer', 'visibility', 'none');
+}
+else {
+  input.checked = true;
+}
+filterGroup.appendChild(input);
+ 
+var label = document.createElement('label');
+label.setAttribute('for', layerID);
+label.textContent = altSymbolName;
+filterGroup.appendChild(label);
+ 
+// When the checkbox changes, update the visibility of the layer.
+input.addEventListener('change', function(e) {
+map.setLayoutProperty(
+layerID,
+'visibility',
+e.target.checked ? 'visible' : 'none'
+);
+});
+
+}
 // When a click event occurs on a feature in the places layer, open a popup at the
 // location of the feature, with description HTML from its properties.
-map.on('click', 'places', function(e) {
+map.on('click', layerID, function(e) {
 var coordinates = e.features[0].geometry.coordinates.slice();
 var description = e.features[0].properties.description;
  
@@ -804,17 +836,35 @@ new mapboxgl.Popup()
 .setLngLat(coordinates)
 .setHTML(description)
 .addTo(map);
+
 });
- 
 // Change the cursor to a pointer when the mouse is over the places layer.
-map.on('mouseenter', 'places', function() {
+map.on('mouseenter', layerID, function() {
 map.getCanvas().style.cursor = 'pointer';
 });
  
 // Change it back to a pointer when it leaves.
-map.on('mouseleave', 'places', function() {
+map.on('mouseleave', layerID, function() {
 map.getCanvas().style.cursor = '';
 });
+
+var myScale = d3.scaleLinear()
+  .domain([9, 22])
+  .range([.13, .7]);
+
+map.on('zoom', function() {
+
+map.setLayoutProperty(layerID,'icon-size', myScale(map.getZoom())); //((zoomLevel**2)-zoomLevel*28)(.1*1.19)-2.187
+
+
+//.28 at 14 and 0.06 at 9.5
+
+});
+
+});
+
+
+
 });
   </script>
 </body>
