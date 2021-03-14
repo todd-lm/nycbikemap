@@ -1,6 +1,8 @@
 # NYCBikeMap
-A unified bike map for NYC that combines information from NYC OpenData, Citi Bike and other sources.
+A unified bike map for NYC that combines information from NYC OpenData, NYC DOT, Citi Bike and other publicly available sources.
+
 ![nycbikemap screenshot](https://raw.githubusercontent.com/todd-lm/nycbikemap/master/nycbikemap%20render.png "NYC Bike Map")
+
 Sources Used:
 * Citi Bike Dock Locations: https://www.citibikenyc.com/system-data Updated March 30, 2020
 * NYC Bike Network Map: https://data.cityofnewyork.us/Transportation/Bicycle-Routes/7vsa-caz7 Updated February 1, 2021
