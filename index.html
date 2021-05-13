@@ -26,7 +26,7 @@
   <!-- <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script> -->
   <script src='mapbox-gl.js'></script> 
   
-  <script src="modernizr.js"></script>
+  <!-- <script src="modernizr.js"></script> -->
 <!-- Favicons: -->
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/icons/apple-touch-icon-144x144.png" />
 <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/icons/apple-touch-icon-152x152.png" />
@@ -294,7 +294,7 @@ var directions = new MapboxDirections({
 });
 // add to your mapboxgl map
 directions.control
-map.addControl(directions, 'top-right');
+map.addControl(directions, 'bottom-right');
 
 
 //westlimit=c; southlimit=40.356765; eastlimit=-73.582462; northlimit=40.977582
