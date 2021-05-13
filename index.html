@@ -36,8 +36,6 @@
 <meta name="msapplication-TileColor" content="#FFFFFF" />
 <meta name="msapplication-TileImage" content="images/icons/mstile-144x144.png" />
 
-<!-- Donation Button: -->
-<!-- <script data-name="BMC-Widget" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="toddlm" data-description="Your donation will help us purchase a dedicated domain name. This will enable us to reach more users and increase the speed of our app. If you aren't able to donate, your feedback is just as valued!" data-message="" data-color="#FF813F" data-position="right" data-x_margin="10" data-y_margin="18"></script> -->
 
 <script async defer src="https://buttons.github.io/buttons.js"></script>
 </head>
@@ -46,7 +44,8 @@
 <body style="background-color: white">
   <link href='mapbox-gl.css' rel='stylesheet'/>
 
-  <script src="directions.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+<link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css">
   
   <!-- <script>
     (function() {
@@ -150,7 +149,7 @@
             <source type="image/jp2" srcset="images/citibike.jp2">
               <img class = "legend-image" src = "images/citibike.png" height="30%" width="80%">
           </picture>
-          <p style = "line-height: normal;">Citi bike dock locations, updated April 2020. Learn more about Citi Bike and get a free month, exclusive to NYC Bike Map users <a style="color: blue;"  rel="noopener" target="_blank" href="https://refer.citibikenyc.com/s/leemillsteintodd">here.</a></p>
+          <p style = "line-height: normal;">Citi bike dock locations, updated May 2021. Learn more about Citi Bike <a style="color: blue;"  rel="noopener" target="_blank" href="https://citibikenyc.com">here.</a></p>
           <h1 style="margin:3%;">Bike Shelters:</h1>
           <picture>
             <source srcset="images/sheltered.webp"  type="image/webp">
@@ -213,7 +212,6 @@
             <label class="submenu-label" for="sub-three">Back</label>
             <div class="arrow left">&#8249;</div>              
           </li>      
-          <li><a target = "_blank" rel="noopener" href="https://www.instagram.com/superior_labs/">Instagram</a></li>
           <li><a target = "_blank" rel="noopener" href="https://github.com/todd-lm/nycbikemap">Github</a></li>
           <li><a href="https://www.producthunt.com/posts/nyc-bike-map?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-nyc-bike-map" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=189060&theme=light" alt="NYC Bike Map - The most powerful open source bike map for NYC. | Product Hunt Embed" style="width: 250px; height: 54px;" width="250px" height="54px" /></a></li>  -->
      <!-- <li><a href="#">Twitter</a></li> -->
@@ -223,8 +221,6 @@
 
       <!-- <li><a href="about.html">Learn more about NYC Bike Map</a></li> -->
 
-      <li><a target = "_blank" rel="noopener" href="https://refer.citibikenyc.com/s/leemillsteintodd">Get a free month of Citi Bike!</a></li>
-
       <a href="https://twitter.com/nyc_bike_map?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-size="large" data-dnt="true" data-show-count="false">Follow @nyc_bike_map</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
       <!-- Place this tag where you want the button to render. -->
         <a class="github-button" href="https://github.com/todd-lm/nycbikemap" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star tpixelminer/nycbikemap on GitHub">Star On Github</a>
@@ -232,7 +228,7 @@
           <a style = "font-size:16px; display: inline; line-height: 0px; color: white; width:60%" ripple="ripple" ripple-color="#FFF"target="_top" href="mailto:contactsuperior.labs@gmail.com">Contact</a>
         </div>
           
-        <p>NYC Bike Map v1.2.1</p>
+        <p>NYC Bike Map v1.3.1</p>
     <footer>
       <small>&copy; 2021 Todd Lee-Millstein</small>
 </footer>
@@ -280,26 +276,29 @@ map.addControl(new mapboxgl.AttributionControl({
 map.addControl(new mapboxgl.FullscreenControl());
 //Add Map Navigation
 map.addControl(new mapboxgl.NavigationControl());
-// if (Modernizr.touchevents ===false) {
-
-//  //Add navigation 
- 
-//  var directions = new MapboxDirections({
-//   accessToken: 'pk.eyJ1IjoidG9kZGxtIiwiYSI6ImNrN3RuYzRjaDB2Zm4zZm5yOW42Ymt0cDQifQ.x1fVFY167sQIIxb3a2zMpQ',
-//   profile: 'mapbox/cycling',
-//   alternatives: true,
-//   profileSwitcher: false,
 
 
-// });
+var directions = new MapboxDirections({
+  accessToken: mapboxgl.accessToken,
+  profile: 'mapbox/cycling',
+  profileSwitcher: false,
+  alternatives: true,
+  controls: {
+    profileSwitcher: false
+  },
+  geocoder: {
+    country: "US",
+    proximity: [-73.987865,40.748297] 
+  }
+  
+});
+// add to your mapboxgl map
+directions.control
+map.addControl(directions, 'top-right');
 
-// map.addControl(directions,'bottom-right')(
-// new MapboxDirections({
-// accessToken: mapboxgl.accessToken,
-// }),
 
-// );
-// }
+//westlimit=c; southlimit=40.356765; eastlimit=-73.582462; northlimit=40.977582
+
 // Oonee Markers:
 
 var popupbklyn = new mapboxgl.Popup({ offset: 25 }).setHTML(
