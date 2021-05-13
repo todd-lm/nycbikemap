@@ -284,7 +284,8 @@ var directions = new MapboxDirections({
   profileSwitcher: false,
   alternatives: true,
   controls: {
-    profileSwitcher: false
+    profileSwitcher: false,
+    instructions: false
   },
   geocoder: {
     country: "US",
@@ -293,7 +294,7 @@ var directions = new MapboxDirections({
   
 });
 // add to your mapboxgl map
-directions.control
+
 map.addControl(directions, 'bottom-right');
 
 
