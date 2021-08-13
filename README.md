@@ -21,3 +21,4 @@ Icons Used:
 * Info by Poups from the Noun Project
 * walking bike by corpus delicti from the Noun Project
 * Stairs by Vadim Solomakhin from the Noun Project
+* Bicycle inside Elevator by Gan Khoon Lay from the Noun Project
