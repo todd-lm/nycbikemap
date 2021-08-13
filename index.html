@@ -44,9 +44,9 @@
 <body style="background-color: white">
   <link href='mapbox-gl.css' rel='stylesheet'/>
 
-  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.js"></script>
+  <script src="mapbox-gl-directions.js"></script>
 <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.0/mapbox-gl-directions.css" type="text/css">
-  
+
   <!-- <script>
     (function() {
     if(Modernizr.touchevents === false) {
@@ -793,6 +793,19 @@ map.addSource('places', {
 'coordinates': [-73.943738, 40.850818]
 }
 },
+
+{
+'type': 'Feature',
+'properties': {
+'description':
+'<p><strong>Empire State Trail</strong></p><p>The 750-mile Empire State Trail welcomes bicyclists and hikers to explore New York State’s extraordinary experiences, people, and places.</p><p>Learn more about the trail<a href="https://empiretrail.ny.gov"> here.</a></p>',
+'icon': 'estrail'
+},
+'geometry': {
+'type': 'Point',
+'coordinates': [-73.884779, 40.908040]
+}
+}
 
 
 
