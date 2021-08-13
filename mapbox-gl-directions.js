@@ -8143,41 +8143,41 @@ var MapboxDirections = function () {
     }
   }, {
     key: '_onSingleClick',
-    // value: function _onSingleClick(e) {
-    //   var _this4 = this;
+    value: function _onSingleClick(e) {
+      var _this4 = this;
 
-    //   var _store$getState4 = store.getState(),
-    //       origin = _store$getState4.origin;
+      var _store$getState4 = store.getState(),
+          origin = _store$getState4.origin;
 
-    //   var coords = [e.lngLat.lng, e.lngLat.lat];
+      var coords = [e.lngLat.lng, e.lngLat.lat];
 
-    //   if (!origin.geometry) {
-    //     this.actions.setOriginFromCoordinates(coords);
-    //   } else {
+      if (!origin.geometry) {
+        this.actions.setOriginFromCoordinates(coords);
+      } else {
 
-    //     var features = this._map.queryRenderedFeatures(e.point, {
-    //       layers: ['directions-origin-point', 'directions-destination-point', 'directions-waypoint-point', 'directions-route-line-alt']
-    //     });
+        var features = this._map.queryRenderedFeatures(e.point, {
+          layers: ['directions-origin-point', 'directions-destination-point', 'directions-waypoint-point', 'directions-route-line-alt']
+        });
 
-    //     if (features.length) {
+        if (features.length) {
 
-    //       // Remove any waypoints
-    //       features.forEach(function (f) {
-    //         if (f.layer.id === 'directions-waypoint-point') {
-    //           _this4.actions.removeWaypoint(f);
-    //         }
-    //       });
+          // Remove any waypoints
+          features.forEach(function (f) {
+            if (f.layer.id === 'directions-waypoint-point') {
+              _this4.actions.removeWaypoint(f);
+            }
+          });
 
-    //       if (features[0].properties.route === 'alternate') {
-    //         var index = features[0].properties['route-index'];
-    //         this.actions.setRouteIndex(index);
-    //       }
-    //     } else {
-    //       this.actions.setDestinationFromCoordinates(coords);
-    //       this._map.flyTo({ center: coords });
-    //     }
-    //   }
-    // }
+          if (features[0].properties.route === 'alternate') {
+            var index = features[0].properties['route-index'];
+            this.actions.setRouteIndex(index);
+          }
+        } else {
+          this.actions.setDestinationFromCoordinates(coords);
+          this._map.flyTo({ center: coords });
+        }
+      }
+    }
   }, {
     key: '_move',
     value: function _move(e) {
