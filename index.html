@@ -42,6 +42,17 @@
 <title>NYC Bike Map</title>
 
 <body style="background-color: white">
+  
+  <style>
+    #menu {
+    position: absolute;
+    background: #efefef;
+    padding: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: larger;
+    }
+    </style>
+
   <link href='mapbox-gl.css' rel='stylesheet'/>
 
   <script src="mapbox-gl-directions.js"></script>
@@ -272,6 +283,15 @@
 
 
   <div id='map'></div>
+  <div id="menu">
+    <input id="standard" type="radio" name="rtoggle" value="standard" checked="checked">
+    <!-- See a list of Mapbox-hosted public styles at -->
+    <!-- https://docs.mapbox.com/api/maps/styles/#mapbox-styles -->
+    <label for="satellite-v9">Standard</label>
+
+    <input id="3D" type="radio" name="rtoggle" value="3D">
+    <label for="light-v10"><strong><i>HillView</i></strong></label>
+    </div>
   <script>
 
 //Check to see if browser is supported
@@ -285,6 +305,7 @@ alert('Your browser does not support NYC Bike Map');
   style: 'mapbox://styles/toddlm/ck7tne8954uck1iplsky5igqx?optimize=true',
   minZoom: '9',
   attributionControl: false,
+  pitch: 0
   });
 }
 
@@ -306,6 +327,45 @@ map.addControl(new mapboxgl.FullscreenControl());
 //Add Map Navigation
 map.addControl(new mapboxgl.NavigationControl());
 
+const layerList = document.getElementById('menu');
+const inputs = layerList.getElementsByTagName('input');
+var terrainLoaded = false;
+for (const input of inputs) {
+input.onclick = (layer) => {
+const layerId = layer.target.id;
+if (layerId == "3D") {
+  if(terrainLoaded == false){
+map.addSource('mapbox-dem', {
+'type': 'raster-dem',
+'url': 'mapbox://mapbox.mapbox-terrain-dem-v1',
+'tileSize': 512,
+'maxzoom': 14
+});
+map.addLayer({
+'id': 'sky',
+'type': 'sky',
+'paint': {
+'sky-type': 'atmosphere',
+'sky-atmosphere-sun': [0.0, 0.0],
+'sky-atmosphere-sun-intensity': 15
+}
+});
+terrainLoaded = true;
+  }
+// add the DEM source as a terrain layer with exaggerated height
+map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 8 });
+ 
+// add a sky layer that will show when the map is highly pitched
+
+map.setPitch(65);
+}
+else {
+  map.setTerrain({ 'source': 'mapbox-dem', 'exaggeration': 0 });
+  map.setPitch(0);
+}
+
+};
+}
 
 var directions = new MapboxDirections({
   accessToken: mapboxgl.accessToken,
